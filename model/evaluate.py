@@ -2,7 +2,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import joblib
-import os
 
 # Load the dataset
 df = pd.read_csv("data/WA_Fn-UseC_-Telco-Customer-Churn.csv")
@@ -17,8 +16,10 @@ y = df['Churn']
 # Split the data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=101)
 
-# Load the saved model and feature names
+# Load model and feature names
 model = joblib.load('model/Telecom_model.pkl')
+feature_names = joblib.load('model/feature_names.pkl')
+
 # Align test features with training features
 X_test = X_test.reindex(columns=feature_names, fill_value=0)
 
