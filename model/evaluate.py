@@ -14,7 +14,7 @@ y = df['Churn']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.1, random_state = 101)
 
 # Load the saved model 
-model= loblib.load('model/Telecome_model.pkl')
+model= joblib.load('model/Telecome_model.pkl')
 
 # Make predictions
 y_pred = model.predict(X_test)
