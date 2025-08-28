@@ -5,8 +5,7 @@ import joblib
 import os
 
 # Load the dataset
-df = pd.read_csv(r"data\WA_Fn-UseC_-Telco-Customer-Churn.csv")  # Use raw string to avoid escape issues
-
+df = pd.read_csv("data/WA_Fn-UseC_-Telco-Customer-Churn.csv")
 # Encode target variable
 df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})  # Convert to binary
 
