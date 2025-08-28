@@ -18,7 +18,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_
 
 # Load model and feature names
 model = joblib.load('model/Telecom_model.pkl')
-feature_names = joblib.load('model/feature_names.pkl')
+feature_names = joblib.load('model/Telecom_model.pkl')
 
 # Align test features with training features
 X_test = X_test.reindex(columns=feature_names, fill_value=0)
