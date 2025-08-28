@@ -18,8 +18,7 @@ y = df['Churn']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=101)
 
 # Load the saved model and feature names
-model, feature_names = joblib.load('model/Telecom_model.pkl')  # Make sure this matches the filename used during training
-
+model = joblib.load('model/Telecom_model.pkl')
 # Align test features with training features
 X_test = X_test.reindex(columns=feature_names, fill_value=0)
 
